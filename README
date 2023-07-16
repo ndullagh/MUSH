@@ -1,0 +1,56 @@
+Noelle Dullaghan (ndullagh)
+
+This is my MUSH (Minimally Useful SHell). It is a minimalistic shell that
+has the basic functionalities of other shells like BASH in a rather small program. It was created a final 
+project for my Systems Programming class, and I had about a week to complete it. 
+
+It supports:
+- Pipes
+- IO Redirection
+- Quoted strings
+- Backslash escapes
+- A built-in cd command
+- SIGINT
+
+If run with arguments, it will treat them as file paths. It will attempt to read the 
+files at these locations and treat each new line found as a command line to execute. If no arguments are given,
+It will print "8-P" as a prompt, allowing the user to type and execute commands as usual.
+
+
+A parser was given to us by our professor to streamline the process (given that we only had 
+a week to do all of this) Here are the descriptions of the functions from the parser's library
+given of my professor's assignment page.
+
+"char *readLongString(FILE *infile);
+
+	reads an arbitrarily long string from the given FILE * up until it encounters
+a newline or EOF, removing the terminating newline, if any. On success,
+returns a pointer to the string in a newly-malloc()ed buffer. On error or
+EOF, returns NULL. The caller is responsible for freeing the allocated string.
+
+
+pipeline crack pipeline(char *line);
+
+	Take the given string and parse it into a pipeline. On success returns a
+pointer to the new pipeline. The pipeline retains a pointer to line, but
+free pipeline() does not free it. On error, returns NULL.
+
+
+void print pipeline(FILE *where, pipeline cl);
+
+	Prints out the contents of the passed pipeline in an aesthetically pleasing
+way. Useful for debugging. print pipeline() changes its behavior a little
+if the environment variable “PARSELINE” is set.
+
+
+void free pipeline(pipeline cl);
+
+	Frees the given command line, all its stages, and all associated strings."
+
+
+Minor changes have been made to the program since submitting it for the project
+for the sake of readability, but other than that it has been left mostly alone.
+I realize now that I am a wiser person that my use of full-indent tabs was not ideal,
+but unfortunately there is not much I can do about it now without manually changing it.
+I apologize for any issues this causes with readability.
+
